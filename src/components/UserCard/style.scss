@@ -1,0 +1,28 @@
+.user-card {
+    width: 250px;
+    height: 200px;
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 15px;
+
+    .user-img-content {
+        display: flex;
+        justify-content: center;
+
+        .user-img {
+            width: 50%;
+        }
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: .9em;
+
+        p {
+            margin-top: 20px;
+        }
+    }
+}
