@@ -1,21 +1,28 @@
+import { IUserProps } from './IUserCard';
 import './style.scss';
 
-const UserCard = (props: any) => {
-    
-    let imagem = `data:image/jpeg;base64,${props.user.profileImg}`;
+const UserCard = ({
+	user: {
+		email,
+		name,
+		profileImg,
+		status
+	}
+}: IUserProps) => {
+	const imagem: string = `data:image/jpeg;base64,${profileImg}`;
 
-    return (
-        <div className="user-card">
-            <div className="user-img-content">
-                <img className="user-img" src={imagem} />
-            </div>
-            <div className="user-info">
-                <p>Nome: {props.user.name}</p>
-                <p>Email: {props.user.email}</p>
-                <p>Status: {props.user.status === "AGUARDANDO_ATENDIMENTO" ? "Aguardando Atendimento" : "Atendido"}</p>
-            </div>
-        </div>
-    );
+	return (
+		<div className="user-card">
+			<div className="user-img-content">
+				<img className="user-img" src={imagem} />
+			</div>
+			<div className="user-info">
+				<p>Nome: {name}</p>
+				<p>Email: {email}</p>
+				<p>Status: {status === "AGUARDANDO_ATENDIMENTO" ? "Aguardando Atendimento" : "Atendido"}</p>
+			</div>
+		</div>
+	);
 
 }
 

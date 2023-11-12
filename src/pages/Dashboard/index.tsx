@@ -6,27 +6,32 @@ import UserCard from '../../components/UserCard';
 import { User } from '../../interfaces/User';
 
 const Dashboard = () => {
+	const [users, setUsers] = useState<User[]>([]);
 
-    const [users, setUsers] = useState([]);
+	useEffect(() => {
+		console.log("render");
 
-    useEffect(() => {
-        api.get<any>(`user`)
-            .then((response) => setUsers(response?.data))
-            .catch((error) => console.error(error));
-    }, []);
+		api.get<User[]>(`user`)
+			.then((response) => setUsers(response?.data))
+			.catch((error) => console.error(error));
+	}, []);
 
-    return (
-        <div className="content">
-            <NavBar />
-            <div className="dashboard">
-                <div className="dashboard-content">
-                {users ? users.map((user: User) => {  
-                    return  <UserCard user={user} />
-                }) :  <p className="empty">Nenhuma conta encontrada</p>}
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div className="content">
+			<NavBar />
+			<div className="dashboard">
+				<div className="dashboard-content">
+					{
+						users.length ?
+							users.map((user: User) => {
+								return <UserCard user={user} />
+							})
+							: <p className="empty">Nenhuma conta encontrada</p>
+					}
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Dashboard;
