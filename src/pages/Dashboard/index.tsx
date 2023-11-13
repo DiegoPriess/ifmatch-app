@@ -9,8 +9,6 @@ const Dashboard = () => {
 	const [users, setUsers] = useState<User[]>([]);
 
 	useEffect(() => {
-		console.log("render");
-
 		api.get<User[]>(`user`)
 			.then((response) => setUsers(response?.data))
 			.catch((error) => console.error(error));

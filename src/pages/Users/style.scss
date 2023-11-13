@@ -1,10 +1,72 @@
 .users {
     width: 82vw;
     height: 100vh;
+    margin-left: 15vw;
     padding: 30px;
     background-color: rgb(226, 226, 226);
 
     .users-content {
         display: flex;
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+        
+        .inputs-group {
+            display: flex;
+            width: 100%;
+            margin-bottom: 40px;
+            justify-content: space-evenly;
+
+            div, label {
+                width: 400px;
+                height: 60px;
+            }
+
+            input[type=file] {
+                display: none;
+            }
+
+            .input-file {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                color: rgb(99, 99, 99);
+                border: 1px dashed rgb(155, 155, 155);
+                border-radius: 4px;
+
+                i{
+                    margin: 0 5px 0 13px;
+                }
+
+                span{
+                    display: flex;
+                    align-items: center;
+                }
+
+            }
+        }
+
+        .create-user-button {
+            margin-top: 20px;
+            width: 50%;
+        }
+
+        .capture-image {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+
+            button {
+                height: 30px;
+                width: 200px;
+            }
+
+            video {
+                width: 400px;
+                margin-bottom: 10px;
+            }
+        }
+        
     }
 }

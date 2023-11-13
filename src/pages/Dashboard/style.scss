@@ -1,10 +1,13 @@
 .dashboard {
     width: 82vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
+    margin-left: 15vw;
     padding: 30px;
     background-color: rgb(226, 226, 226);
 
     .dashboard-content {
         display: flex;
+        flex-wrap: wrap;
     }
 }
