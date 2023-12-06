@@ -12,6 +12,9 @@ const Dashboard = () => {
 		api.get<User[]>(`user`)
 			.then((response) => setUsers(response?.data))
 			.catch((error) => console.error(error));
+			setTimeout(function() {
+				window.location.reload();
+			}, 5000);
 	}, []);
 
 	return (
